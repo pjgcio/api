@@ -15,7 +15,7 @@ Integration Guide
                     data-user-email ='buyer_email_address@example.com'
                     data-redirect-url ="http://test.jrmerchants.com/confirm.php" //This endpoint should host the code written below             
                     data-firstName ='Buyer First Name'
-                    data-lastName ="Buyer lAST Name"/>
+                    data-lastName ="Buyer Last Name"/>
                   <script src="http://checkbook.io/static/api/checkbook.js" class="checkbook-button" id="checkbook_api_js">
                   </script>
         </form>
