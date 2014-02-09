@@ -53,3 +53,9 @@ Integration Guide
         $pos = strpos($refno, "SUCCESS");
         ?>
 
+
+Issues/feature requests?
+------
+
+Please file them here: https://github.com/checkbookio/api-docs/issues  
+Or contact us directly at support@checkbook.io
