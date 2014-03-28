@@ -1,33 +1,100 @@
- 1. Render a form
-    (CustomFormTutorial.html) to accept
-    bank details on the merchant website
-    which also imports checkbook.js. You
-    need to populate fields like price,
-    email, user address etc in html.
-    Also note that there are form fields
-    whose names should not be modified.
-    
- 2. When the form is submitted, checkbook.js will parse out data
-    from the form, hit checkbook.io and
-    handle all the user interaction. You
-    don't have do do anything here. You
-    just need to make sure the input and
-    div IDs are maintained as specified
-    in CustomFormTutorial.html
-    
- 3. checkbook.io will return a token which will be posted back to an
-    endpoint on merchants side
-    (configured in data-redirect-url).
-    You need to handle this post back,
-    make the final "charge" call to
-    checkbook.io using the token.
-    Example charge call:
+How to use Custom Form feature 
+------
 
+ **Step 1: Looking at the files structure**
+
+   Go to https://www.checkbook.io/api/customForm
+   
+   You will see the Basic theme stand-alone custom Form UI component. There are mainly 3 files involved in building this widget.
+   
+    - Html FIle      (customFormApi.html)
+    - Js File    (customForm_checkbook.js)
+    - Serverside handling (handle postback in your backend to make the final charge)  
+   
+
+   Explaining Html File      (customFormApi.html)
+   
+   This file basically includes html code which builds below component’s User Interface. For now this is the basic theme we have gone with, but user can change the UI theme and add classes to override any of our css and build a UI of their own choice. We are giving user full control in changing the layout of the component.
+   
+   Note: It is important that you must not change any of the ids of the elements because it will be referred in the javascript code. Which will definitely break the flow.
+   
+   At the bottom of the file we are including Jquery library for us to make the development easier which most other websites may already have. We recommend you use jquery 1.9.1 and dont remove this import. 
+   
+   `<script src="https://www.checkbook.io/static/js/jquery-1.9.1.min.js"></script>`
+   
+   
+   Following line is checkbook.io’s javascript file which must be included in the page which requires the dependencies of jquery as shown above
+   
+   <script src="https://www.checkbook.io/static/api/customForm_checkbook.js"></script>
+
+
+ **Step 2: How to implement this Component**
+
+   Invoking this widget is very simple and literally one line of code.
+   
+   first create the config object with all the values from the cart and invoke the UI with new Checkbook(config)
+   
+   Below is the code which sample values passed in the config object.
+   
+   Note: the config object must be passed during the initialization of the Checkbook object and also all the parameters are mandatory and must have same names as shown below.
+   
+   
+           <script>
+           (function(){
+               
+               var config = {
+                   data_key: "testKey",
+                   data_amount: "20.45",
+                   data_name: "Jr Merchants",
+                   data_for: "Jr Merchants",
+                   data_description: "2 widgets ($20.00)",
+                   data_user_email: "johnsmith4@gmail.com",
+                   data_redirect_url : "http://example.com/api/jrmerchants",  
+                   data_firstName : "john",
+                   data_lastName : "smith",
+                   data_addr1 : "address Line 1",
+                   data_addr2 : "address Line 2",
+                   data_city : "san jose",
+                   data_state : "California",
+                   data_zip : "95050",
+                   data_country : "United States"
+               };
+               
+               new Checkbook(config);
+               
+           })();
+           </script>
+   
+   
+   
+   After implementing this properly you should be able to see below widget working automatically.
+
+
+![checkbook check][1]
+
+
+ **Step 3: Handle postback**
+
+Once custom Form component is up and running as shown in previous step, From that point onwards Checkbook javascript will handle complete behavior of the flow, validation and will perform the real time payment verification.
+    
+Once the real time payment verification is complete, and user does final submission then checkbook.io will send a token back and will make post call on the URL which was provided by you during the initialization of the Checkbook object.
+    
+    `data_redirect_url : "http://example.com/api/jrmerchants"`
+    
+This `data_redirect_url` value was passed in the config, during the initialization of the Checkbook object. 
+    
+In this case, You will be responsible for handling this post call and retrieving the token string. Then make charge call directly to checkbook.io api along with token and other necessary fields as shown in below sample code.
+    
+API request:
 
         curl http://www.checkbook.io/api/charge \ 
-    	-d key=your_secret_key \ 
-    	-d token=2qweq2eq328217weqweeqw32bwq23bdad \
-    	-d amount=10 \ 
-    	-d currency=usd \ 
-    	-d "description=Sample charge for checkbook.io user"
+              -d key=your_secret_key \ 
+              --d token=2qweq2eq328217weqweeqw32bwq23bdad \
+              --d amount=10 \ 
+              --d currency=usd \ 
+              --d "description=Sample charge for checkbook.io user"
 
+
+
+
+  [1]: http://i.stack.imgur.com/X5C54.png
