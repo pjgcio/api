@@ -3,8 +3,9 @@ How to use Custom Form feature
 
  **Step 1: Looking at the files structure**
 
-   Go to https://www.checkbook.io/api/customForm
-   
+   Go to [CustomFormTutorial.html][2] and run it locally.
+
+
    You will see the Basic theme stand-alone custom Form UI component. There are mainly 3 files involved in building this widget.
    
     - Html FIle      (customFormApi.html)
@@ -98,3 +99,4 @@ API request:
 
 
   [1]: http://i.stack.imgur.com/X5C54.png
+  [2]: https://github.com/checkbookio/api/blob/master/CustomFormTutorial.html   
