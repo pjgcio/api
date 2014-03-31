@@ -89,8 +89,9 @@ new Checkbook() object also gives you access to submit() method which basically 
 
 Just use the code like below
 
-var cb = new Checkbook(config);   // as shown in step 1
-cb.submit();     //call this method anywhere you like & it will make post call to your server
+`var cb = new Checkbook(config);   // as shown in step 1`
+`cb.submit();     //call this method anywhere you like & it will make post call to your server`
+
     
 
 Once the real time payment verification is complete, and user does final submission then checkbook.io will send a token back and will make post call on the URL which was provided by you during the initialization of the Checkbook object.
