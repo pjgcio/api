@@ -77,7 +77,22 @@ How to use Custom Form feature
  **Step 3: Handle postback**
 
 Once custom Form component is up and running as shown in previous step, From that point onwards Checkbook javascript will handle complete behavior of the flow, validation and will perform the real time payment verification.
+
+![checkbook check][3]
+
+
+Once the real time payment verification is complete, user will see "Send a Check" button screen where user can review and click on "Send a Check" button and make the payment. 
+
+For some reason if you would not want to use "Send a Check" button but use your own cart submit button or any other way is also possible.
+
+new Checkbook() object also gives you access to submit() method which basically invokes the payment call for you without using the "Send a Check" button.
+
+Just use the code like below
+
+var cb = new Checkbook(config);   // as shown in step 1
+cb.submit();     //call this method anywhere you like & it will make post call to your server
     
+
 Once the real time payment verification is complete, and user does final submission then checkbook.io will send a token back and will make post call on the URL which was provided by you during the initialization of the Checkbook object.
     
     `data_redirect_url : "http://example.com/api/jrmerchants"`
@@ -100,3 +115,4 @@ API request:
 
   [1]: http://i.stack.imgur.com/X5C54.png
   [2]: https://github.com/checkbookio/api/blob/master/CustomFormTutorial.html   
+  [3]: http://i.imgur.com/hB9F0wu.png
