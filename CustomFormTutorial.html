@@ -12,19 +12,6 @@
 		
 </head>
 <body>
-	
-	
-	<input type="hidden" id="checkbook_var"
-	  data-key="2DW7KGc6LtbdnRc5qkBfaGMCXj4Nh4fOb6jML0iyKxY"
-          data-amount="20.45"
-          data-name="Jr Merchants"
-	  data-for="Jr Merchants"
-          data-description="2 widgets ($20.00)"
-	  data-user-email ="johnsmith4@gmail.com"
-	  data-redirect-url = "jrmerchants"  
-	  data-firstName ="john"
-	  data-lastName ="smith"/>
-	
 	<!-- Modal -->
 	<div id="myModalSenderInfo">
 	<div class="modal-dialog">
@@ -35,7 +22,7 @@
 					<div>
 						<div class="box" style="margin: 0; padding: 0px 20px 0px 20px;">
 							<h3 class="bigintro">Pay by Online Check</h3>  
-							<div id="senderSection" style="position: absolute; top:35px;background-repeat:no-repeat;min-height: 300px;width: 100%;background-image: url('http://checkbook.io/static/img/blue_check.jpg');
+							<div id="senderSection" style="position: absolute; top:35px;background-repeat:no-repeat;min-height: 300px;width: 100%;background-image: url('../static/img/blue_check.jpg');
 							    background-position: 0px 20px;">
 							  
 							  
@@ -90,7 +77,7 @@
 									<br>
 									<div class="errorResp"></div>
 									<br>	
-									<button id="sendCheckBtnForUserExist" type="submit" class="btn btn-success" tabindex="5"
+									<button id="sendCheckBtn" type="submit" class="btn btn-success" tabindex="5"
 									style="margin-bottom: 10px;">
 									      Send the Check</button>
 									
@@ -243,6 +230,7 @@
 								<div id="setUpYourPin"  style="padding:10px 20px 10px 20px; display: none;">
 									Please choose a PIN of minimum 6 digits incase you wish to use this account again
 									<br>
+									<br>
 									<form id="setUpYourPinForm">
 									<input type="password" class="form-control inputCB" id="online_passcode" name="online_passcode"
 										placeholder="Enter Pin" tabindex="1" style="margin-bottom: 15px;"
@@ -263,18 +251,19 @@
 										data-placement="left">	
 									
 									
-									<span>You are ready to submit a Check payment of <span class="netAmount"></span> to <span class="merchantName">										
+									<!--<span>You are ready to submit a Check payment of <span class="netAmount"></span> to <span class="merchantName">										
 									</span>.
 									The money will be withdrawn from your bank account.
 									</span>
+									-->
 									<br>
 										
 									<div class="errorResp" style="display: none; color: red;">								    		
 									</div>
 									
-									<button id="pinCreateBtnWithNewUser" type="submit" class="btn btn-success" tabindex="5"
+									<button id="pinCreateBtn" type="submit" class="btn btn-danger" tabindex="5"
 									style="margin-bottom: 10px; margin-top:12px;">
-									      Send the Check</button>
+									      Continue</button>
 									
 									</form>
 									
@@ -338,10 +327,35 @@
 	</div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
 
-	<script src="http://checkbook.io/static/js/jquery-1.9.1.min.js"></script>
+	<script src="https://www.checkbook.io/static/js/jquery-1.9.1.min.js"></script>
 	
-	<script src="http://checkbook.io/static/api/customForm_checkbook.js"></script>
+	<script src="https://www.checkbook.io/static/api/customForm_checkbook.js"></script> 
+	<!-- <script src="http://localhost:5000/static/api/customForm_checkbook.js"></script> -->
 
-
+	<script>
+		(function(){
+			
+			var config = {
+				data_key: "MJ95Gjr9G6wBKwBiPbYG9JavvGnG4lnyC6QSZt9G8Ag",
+				data_amount: "25.45",
+				data_name: "Jr Merchants",
+				data_for: "Jr Merchants",
+				data_description: "2 widgets ($20.00)",
+				data_user_email: "random8@checkbook.io",
+				data_redirect_url : "someURL",
+				data_firstName : "john",
+				data_lastName : "smith",
+				data_addr1 : "2222 Benton street",
+				data_addr2 : "address Line 2",
+				data_city : "San Jose",
+				data_state : "California",
+				data_zip : "95050",
+				data_country : "Unites States"
+			};
+			
+			var checkbook = new Checkbook(config);
+			
+		})();
+	</script>
 </body>
 </html>
