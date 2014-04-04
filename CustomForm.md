@@ -104,7 +104,7 @@ In this case, You will be responsible for handling this post call and retrieving
     
 API request:
 
-        curl http://www.checkbook.io/api/charge \ 
+        curl https://www.checkbook.io/api/charge \ 
               -d key=your_secret_key \ 
               --d token=2qweq2eq328217weqweeqw32bwq23bdad \
               --d amount=10 \ 
