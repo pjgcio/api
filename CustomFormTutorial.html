@@ -362,9 +362,10 @@
 		};
 		
 		
-		//REMEMEBR to call checkbook.submit() and pass checkbookResponseHandler
-		//This checkbookResponseHandler method will be called and response will have token
-		//which you can pass back to magento backend and use this token to call charge API
+		//1. REMEMEBR to call checkbook.submit() and pass checkbookResponseHandler
+		//2. The "checkbookResponseHandler" method will be called and response will have the token.
+		//3. Now the token should be injected somewhere in the current page inside form.
+		//4. When "Place order" is clicked, pass the token back to your server
 		
 		//checkbook.submit(checkbookResponseHandler);		
 		
