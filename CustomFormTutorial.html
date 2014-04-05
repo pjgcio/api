@@ -337,7 +337,7 @@
 				data_name: "Jr Merchants",
 				data_for: "Jr Merchants",
 				data_description: "2 widgets ($20.00)",
-				data_user_email: "random8@checkbook.io",
+				data_user_email: "random13@checkbook.io",
 				data_redirect_url : "someURL",
 				data_firstName : "john",
 				data_lastName : "smith",
@@ -350,8 +350,28 @@
 			};
 			
 			var checkbook = new Checkbook(config);
+		
+			var checkbookResponseHandler = function(status, response) {
+				if (response.error) {
+				  // Show the errors on the form
+				  alert(response.error);
+				} else {
+				  var token = response.token;
+				}
+			};
 			
+			
+			//REMEMEBR to call checkbook.submit() and pass checkbookResponseHandler
+			//This checkbookResponseHandler method will be called and response will have token
+			//which you can pass back to magento backend and use this token to call charge API
+			
+			//checkbook.submit(checkbookResponseHandler);		
 		})();
+		
+		
+	      
+	      
+	      
 	</script>
 </body>
 </html>
