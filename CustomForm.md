@@ -50,7 +50,6 @@ How to use Custom Form feature
                    data_for: "Jr Merchants",
                    data_description: "2 widgets ($20.00)",
                    data_user_email: "johnsmith4@gmail.com",
-                   data_redirect_url : "http://example.com/api/jrmerchants",  
                    data_firstName : "john",
                    data_lastName : "smith",
                    data_addr1 : "address Line 1",
