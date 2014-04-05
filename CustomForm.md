@@ -92,15 +92,12 @@ Just use the code like below
 `var cb = new Checkbook(config);   // as shown in step 1`
 `cb.submit();     //call this method anywhere you like & it will make post call to your server`
 
-    
 
-Once the real time payment verification is complete, and user does final submission then checkbook.io will send a token back and will make post call on the URL which was provided by you during the initialization of the Checkbook object.
-    
-    `data_redirect_url : "http://example.com/api/jrmerchants"`
-    
-This `data_redirect_url` value was passed in the config, during the initialization of the Checkbook object. 
-    
-In this case, You will be responsible for handling this post call and retrieving the token string. Then make charge call directly to checkbook.io api along with token and other necessary fields as shown in below sample code.
+When `cb.submit()` is called then checkbook.js will inject a token in the HTML which you can control where to inject.
+
+Once the token is injected in the form, you can submit the form and get the `token` on your sever side code.
+
+Now, you are responsible to handle the final "/api/charge" call. Make charge call directly to checkbook.io api/charge along with token and other necessary fields as shown in below sample code.
     
 API request:
 
