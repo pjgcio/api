@@ -100,12 +100,12 @@ Now, you are responsible to handle the final "/api/charge" call. Make charge cal
     
 API request:
 
-        curl https://www.checkbook.io/api/charge \ 
+        curl -k https://www.checkbook.io/api/charge \ 
               -d key=your_secret_key \ 
-              --d token=2qweq2eq328217weqweeqw32bwq23bdad \
-              --d amount=10 \ 
-              --d currency=usd \ 
-              --d "description=Sample charge for checkbook.io user"
+              -d token=2qweq2eq328217weqweeqw32bwq23bdad \
+              -d amount=10 \ 
+              -d currency=usd \ 
+              -d "description=Sample charge for checkbook.io user"
 
 
 
