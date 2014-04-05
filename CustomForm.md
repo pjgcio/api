@@ -88,7 +88,7 @@ new Checkbook() object also gives you access to submit() method which basically 
 
 Just use the code like below
 
-`var cb = new Checkbook(config);   // as shown in step 1`
+`var cb = new Checkbook(config);   // as shown in step 1`  
 `cb.submit();`
 
 
