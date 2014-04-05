@@ -356,6 +356,8 @@
 			  alert(response.error);
 			} else {
 			  var token = response.token;
+			  $your_form.append($('<input type="hidden" name="token" />').val(token));
+			  //This hidden field token is posted back to your server
 			}
 		};
 		
