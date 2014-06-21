@@ -82,9 +82,12 @@ Once custom Form component is up and running as shown in previous step, From tha
 
 Once the real time payment verification is complete, user will see "Send a Check" button screen where user can review and click on "Send a Check" button and make the payment. 
 
+Note:
+----
+
 For some reason if you would not want to use "Send a Check" button but use your own cart submit button or any other way is also possible.
 
-new Checkbook() object also gives you access to submit() method which basically invokes the payment call for you without using the "Send a Check" button.
+`new Checkbook()` object also gives you access to submit() method which basically invokes the payment call for you without using the "Send a Check" button.
 
 Just use the code like below
 
@@ -93,8 +96,10 @@ Just use the code like below
 
 
 When `cb.submit()` is called then checkbook.js will inject a token in the HTML which you can control where to inject.
-
 Once the token is injected in the form, you can submit the form and get the `token` on your sever side code.
+
+
+ **Step 4: Final charge call from your backend**
 
 Now, you are responsible to handle the final "/api/charge" call. Make charge call directly to checkbook.io api/charge along with token and other necessary fields as shown in below sample code.
     
