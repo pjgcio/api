@@ -26,7 +26,7 @@ How to use Custom Form feature
    
    Following line is checkbook.io’s javascript file which must be included in the page which requires the dependencies of jquery as shown above
    
-   <script src="https://www.checkbook.io/static/api/customForm_checkbook.js"></script>
+   <script src="https://www.checkbook.io/static/api/v1/customForm_checkbook.js"></script>
 
 
  **Step 2: How to implement this Component**
@@ -101,11 +101,11 @@ Once the token is injected in the form, you can submit the form and get the `tok
 
  **Step 4: Final charge call from your backend**
 
-Now, you are responsible to handle the final "/api/charge" call. Make charge call directly to checkbook.io api/charge along with token and other necessary fields as shown in below sample code.
+Now, you are responsible to handle the final "/api/v1/charge" call. Make charge call directly to checkbook.io api/charge along with token and other necessary fields as shown in below sample code.
     
 API request:
 
-        curl -k https://www.checkbook.io/api/charge \ 
+        curl -k https://www.checkbook.io/api/v1/charge \ 
               -d key=your_secret_key \ 
               -d token=2qweq2eq328217weqweeqw32bwq23bdad \
               -d amount=10 \ 
@@ -116,5 +116,5 @@ API request:
 
 
   [1]: http://i.stack.imgur.com/X5C54.png
-  [2]: https://github.com/checkbookio/api/blob/master/CustomFormTutorial.html   
+  [2]: https://github.com/checkbookio/api/blob/master/samples/CustomFormTutorial.html   
   [3]: http://i.imgur.com/hB9F0wu.png

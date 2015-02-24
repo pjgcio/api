@@ -11,7 +11,7 @@
                     data-redirect-url ="http://example.com/callback.php" //This endpoint should host the code written below             
                     data-firstName ='Buyer First Name'
                     data-lastName ="Buyer Last Name"/>
-                  <script src="http://checkbook.io/static/api/checkbook.js" class="checkbook-button" id="checkbook_api_js">
+                  <script src="http://checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
                   </script>
         </form>
 
@@ -19,7 +19,7 @@
 2. Add this snippet  in the callback URL (PHP)  
 
         <?php
-        $url = "http://www.checkbook.io/api/charge";
+        $url = "http://www.checkbook.io/api/v1/charge";
         $token = "token returned from checkbook.io";      
         $amount = "10.00"; //Amount to be charged
         $currency = "USD";
