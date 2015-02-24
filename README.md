@@ -8,12 +8,12 @@ Integration Guide
 Issues/feature requests?
 ------
 
-Please file them here: https://github.com/checkbookio/api/api-docs/issues  
+Please file them here: https://github.com/CheckbookWeb/api/issues
 Or contact us directly at support@checkbook.io
 
 
   [1]: https://www.checkbook.io/register
-  [2]: https://www.checkbook.io/admin/api/v1_keys
-  [3]: https://github.com/checkbookio/api/v1-docs/blob/master/EmbeddedForm.md
-  [4]: https://github.com/checkbookio/api/v1-docs/blob/master/CustomForm.md
-  [5]: https://github.com/checkbookio/api/v1-docs/blob/master/DirectAPI.md
+  [2]: https://www.checkbook.io/admin/api_keys
+  [3]: https://github.com/CheckbookWeb/api/blob/master/EmbeddedForm.md
+  [4]: https://github.com/CheckbookWeb/api/blob/master/CustomForm.md
+  [5]: https://github.com/CheckbookWeb/api/blob/master/DirectAPI.md
