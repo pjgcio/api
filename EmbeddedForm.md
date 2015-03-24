@@ -8,7 +8,7 @@
                     data-for="Merchant Name"
                     data-description="Your item's description"
                     data-user-email ='buyer_email_address@example.com'
-                    data-redirect-url ="http://example.com/callback.php" //This endpoint should host the code written below             
+                    data-redirect-url ="http://example.com/callback" //This endpoint should host the code written below             
                     data-firstName ='Buyer First Name'
                     data-lastName ="Buyer Last Name"/>
                   <script src="http://checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
@@ -16,34 +16,21 @@
         </form>
 
 
-2. Add this snippet  in the callback URL (PHP)  
+2. Add this snippet  in the callback URL (Python)  
 
-        <?php
-        $url = "http://www.checkbook.io/api/v1/charge";
-        $token = "token returned from checkbook.io";      
-        $amount = "10.00"; //Amount to be charged
-        $currency = "USD";
-        $description = "Your item's description";
-    
-        $options = array(
-          'http'=>array(
-            'method'=>"POST",
-            'header'=>
-              "Accept-language: en\r\n".
-              "Content-type: application/x-www-form-urlencoded\r\n",
-            'content'=>http_build_query(
-                array(            
-                    'key'=>'SECRET KEY',
-                    'token'=> $token,
-                    'amount' => $amount,
-                    'currency' => $currency,
-                    'description' => $description
-                    
-                ),'','&'
-            )
-        ));
-    
-        $context = stream_context_create($options);
-        $refno = file_get_contents($url,false,$context);
-        $pos = strpos($refno, "SUCCESS");
-        ?>
+        @frontend.route('/callback', methods=['POST'])
+        def charge():
+            token = request.form['token']
+            amount = 100 # in cents
+            currency = "USD"
+            secret_key = 'secret_key'
+            website = 'http://www.example.com'
+        
+            payload = {'key': secret_key,
+                       'website': website,
+                       'token': token,
+                       'amount': amount,
+                       'currency': currency,
+                       'description': 'Your transaction description'}
+        
+            r = requests.post("https://www.checkbook.io/api/v1/charge", data=payload)
