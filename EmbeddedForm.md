@@ -13,8 +13,8 @@ Sandbox:
                     data-redirect-url ="https://example.com/callback" //This endpoint should host the code written below             
                     data-firstName ='Buyer First Name'
                     data-lastName ='Buyer Last Name'
-                    data-env = "sandbox"/>/>
-                  <script src="httpw://sandbox.checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
+                    data-env = "sandbox"/>
+                  <script src="https://sandbox.checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
                   </script>
         </form>
 
@@ -31,7 +31,7 @@ Production:
                     data-redirect-url ="https://example.com/callback" //This endpoint should host the code written below             
                     data-firstName ='Buyer First Name'
                     data-lastName ="Buyer Last Name"/>
-                  <script src="httpw://www.checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
+                  <script src="https://www.checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
                   </script>
         </form>
 
