@@ -1,4 +1,4 @@
-1. Add this snippet in your checkout form  
+## 1. Add this snippet in your checkout form  
 
 Sandbox:
 
@@ -36,7 +36,7 @@ Production:
         </form>
 
 
-2. Add this snippet  in the callback URL (Python)  
+## 2. Add this snippet  in the callback URL (Python)  
 
         @frontend.route('/callback', methods=['POST'])
         def charge():
