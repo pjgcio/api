@@ -1,16 +1,18 @@
 ## 1. Add this snippet in your checkout form  
 
+Note: Amount to be charged in cents
+
 Sandbox:
 
         <form id="checkbook_io" method="POST">
                   <input type="hidden" id="checkbook_var"
                     data-key="PUBLISHABLE KEY"
-                    data-amount='100' //Amount to be charged in cents
+                    data-amount='100'
                     data-name="Merchant Name"
                     data-for="Merchant Name"
                     data-description="Your item's description"
                     data-user-email ='buyer_email_address@example.com'
-                    data-redirect-url ="https://example.com/callback" //This endpoint should host the code written below             
+                    data-redirect-url ="https://example.com/callback"          
                     data-firstName ='Buyer First Name'
                     data-lastName ='Buyer Last Name'
                     data-env = "sandbox"/>
@@ -23,12 +25,12 @@ Production:
         <form id="checkbook_io" method="POST">
                   <input type="hidden" id="checkbook_var"
                     data-key="PUBLISHABLE KEY"
-                    data-amount='100' //Amount to be charged in cents
+                    data-amount='100'
                     data-name="Merchant Name"
                     data-for="Merchant Name"
                     data-description="Your item's description"
                     data-user-email ='buyer_email_address@example.com'
-                    data-redirect-url ="https://example.com/callback" //This endpoint should host the code written below             
+                    data-redirect-url ="https://example.com/callback"            
                     data-firstName ='Buyer First Name'
                     data-lastName ="Buyer Last Name"/>
                   <script src="https://www.checkbook.io/static/api/v1/checkbook.js" class="checkbook-button" id="checkbook_api_js">
