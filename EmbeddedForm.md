@@ -1,6 +1,7 @@
 1. Add this snippet in your checkout form  
 
 Sandbox:
+
         <form id="checkbook_io" method="POST">
                   <input type="hidden" id="checkbook_var"
                     data-key="PUBLISHABLE KEY"
@@ -18,6 +19,7 @@ Sandbox:
         </form>
 
 Production:
+
         <form id="checkbook_io" method="POST">
                   <input type="hidden" id="checkbook_var"
                     data-key="PUBLISHABLE KEY"
