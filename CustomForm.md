@@ -115,6 +115,6 @@ API request:
 
 
 
-  [1]: http://i.stack.imgur.com/X5C54.png
-  [2]: https://github.com/checkbookio/api/blob/master/samples/CustomFormTutorial.html   
+  [1]: http://i.stack.imgur.com/X5C54.png 
+  [2]: https://github.com/CheckbookWeb/api/blob/master/samples/CustomFormTutorial.html
   [3]: http://i.imgur.com/hB9F0wu.png
