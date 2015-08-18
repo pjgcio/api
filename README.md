@@ -1,7 +1,7 @@
 Integration Guide
 --------
 
-1. [Signup][1] on checkbook.io  
+1. [Signup][1] on checkbook.io **as a business account**
 2. Generate your keys from [API Keys][2] 
 3. Refer to [Embedded Form][3]  (easy) [Custom Form][4] implementation or use the [API][5] directly
 
