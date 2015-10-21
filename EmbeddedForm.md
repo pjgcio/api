@@ -40,6 +40,7 @@ Production:
 
 ## 2. Add this snippet in the callback URL  
 For Python (flask):
+
         @frontend.route('/callback', methods=['POST'])
         def charge():
             token = request.form['token']
@@ -59,6 +60,7 @@ For Python (flask):
             #r = requests.post("https://sandbox.checkbook.io/api/v1/charge", data=payload)
             
 For Nodejs (express):
+
         var request = require('request');
         app.use(express.bodyParser());
         
