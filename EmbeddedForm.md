@@ -38,8 +38,8 @@ Production:
         </form>
 
 
-## 2. Add this snippet  in the callback URL (Python)  
-
+## 2. Add this snippet in the callback URL  
+        == For Python (flask) ==
         @frontend.route('/callback', methods=['POST'])
         def charge():
             token = request.form['token']
@@ -57,3 +57,33 @@ Production:
         
             r = requests.post("https://www.checkbook.io/api/v1/charge", data=payload)
             #r = requests.post("https://sandbox.checkbook.io/api/v1/charge", data=payload)
+            
+        == For Nodejs (express) ==
+        var request = require('request');
+        app.use(express.bodyParser());
+        
+        app.post('/callback', function(request, response){
+        	token = request.body.token;
+        	amount = 100; //in cents
+        	currency = "USD";
+        	secret_key = 'secret_key';
+        	website = 'https://www.example.com';
+        
+        	payload = {'key': secret_key,
+        		   'website': website,
+        		   'token': token,
+        		   'amount': amount,
+        		   'currency': currency,
+        		   'description': 'Your transaction description'}
+        
+        	request.post(
+        	    //'https://sandbox.checkbook.io/api/v1/charge',
+        	    'https://www.checkbook.io/api/v1/charge',
+        	    { form: payload },
+        	    function (error, response, body) {
+        		if (!error && response.statusCode == 200) {
+        		    console.log(body)
+        		}
+        	    }
+        	);
+        });
